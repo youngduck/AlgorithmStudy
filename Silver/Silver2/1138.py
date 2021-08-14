@@ -1,3 +1,4 @@
+#1138
 N=int(input())
 
 data=[N]*N

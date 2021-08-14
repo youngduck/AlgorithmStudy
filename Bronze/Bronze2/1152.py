@@ -1,3 +1,4 @@
+#1152
 n=list(map(str,input().split(' ')))
 result=len(n)
 if n[0] == '':

@@ -1,3 +1,4 @@
+#1157
 n=input()
 N=n.upper()
 alpha=[chr(t) for t in range(65,91)]
