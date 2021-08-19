@@ -10,4 +10,3 @@ elif i>=60:
     print('D')
 else:
     print('F')
-    
