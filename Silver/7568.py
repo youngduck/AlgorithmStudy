@@ -1,5 +1,6 @@
 N=int(input())
 data=[]
+
 for i in range(N):
     weight,height=map(int,input().split())
     data.append((weight,height))

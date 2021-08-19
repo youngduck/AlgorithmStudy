@@ -1,4 +1,5 @@
 i=1
+
 while True:  
     result=0
     L,P,V=map(int,input().split())

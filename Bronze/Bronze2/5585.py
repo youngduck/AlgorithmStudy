@@ -5,4 +5,5 @@ cnt=0
 for i in coin:
     cnt += money//i
     money = money%i
+    
 print(cnt)

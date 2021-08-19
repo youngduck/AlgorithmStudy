@@ -1,5 +1,6 @@
 n=input()
 time=0
+
 for i in n:
     if i == 'A' or i=='B' or i=='C':
         time+=3
@@ -19,4 +20,5 @@ for i in n:
         time+=10
     else:
         print("입력할 수 없는 문자입니다.")
+        
 print(time)

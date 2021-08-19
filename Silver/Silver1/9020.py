@@ -18,4 +18,4 @@ def cc(n):
 prime=pp(10000)
 for _ in range(int(input())):
     n=int(input())
-    cc(n)
+    cc(n) 

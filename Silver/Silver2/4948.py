@@ -22,3 +22,4 @@ while True:
         if num_range[i]:
             cnt+=1
     print(cnt)
+    
