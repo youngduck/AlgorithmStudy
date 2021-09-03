@@ -11,6 +11,8 @@ for i in range(m):
     heapq.heappush(data,min)
     heapq.heappush(data,min)
 print(sum(data))
+
+
 # import sys
 # n,m=map(int,sys.stdin.readline().split())
 
