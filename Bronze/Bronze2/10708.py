@@ -10,7 +10,6 @@ for m in range(M):
     
     expect=list(map(int,sys.stdin.readline().split()))
     target=target_list[m]
-    print("%d 라운드  타겟 %d" %(m,target))
     for n in range(N):
         if expect[n] == target:
             people[n]+=1
