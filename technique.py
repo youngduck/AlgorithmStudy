@@ -9,6 +9,7 @@
 #data=numpy.array(data)
 #print(data.shape) -> n행m열 (n,m) 튜플출력
 
+#------from itertools import 순열,조합~
 
 #-----import math
 

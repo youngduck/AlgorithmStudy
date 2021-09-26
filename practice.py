@@ -1,4 +1,5 @@
-data=[0,0,0,0,0,0,0]
+data=[[2,6],[5,4],[3,4],[1,3]]
 
-for i in range(2,2):
-    print(i)
+print(data.index([6,6]))
+
+print(data)
