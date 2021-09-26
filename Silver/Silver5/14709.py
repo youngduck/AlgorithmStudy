@@ -15,6 +15,3 @@ if n == 3:
         print("Woof-meow-tweet-squeek")
 else:
     print("Woof-meow-tweet-squeek")
-
-
-
