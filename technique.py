@@ -10,8 +10,19 @@
 #print(data.shape) -> n행m열 (n,m) 튜플출력
 
 #------from itertools import 순열,조합~
+#누적합-> from itertools import accumulate
 
 #-----import math
 
 #-----배열관련
 #list(filter(함수,리스트))  -> 리스트에서 원하는 함수를 만족하는 값 여러개(리스트로)반환해줌.
+
+#------내장함수 zip
+#numbers=[1,2,3]
+#letters=["a","b","c"]
+##pairs=zip(numbers,letters)
+##for i in zip(nmbers,letters):
+#    print(i)
+#(1,"a")
+#(2,"b")
+#(3,"c")
