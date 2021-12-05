@@ -36,6 +36,8 @@ class Game:
         print("당신의 캐릭터 번호를 선택해주세요 (1,2,3,4) ",end='')
         num=int(input())
         print("당신의 캐릭터는 %s입니다." %(self.player[num-1].name))
+        self.user_character=self.player[num-1].name
+    
         # TODO (2) : 랜덤 알파벳 10글자로 이루어진 단어 만들어 answer_string에 저장해주세요.
         for i in range(10):
             self.answer_string+=random.choice(string.ascii_uppercase)
@@ -54,13 +56,13 @@ class Game:
         - [ 게임 진행 ] 부분을 담당하는 함수 입니다.
         - 동일 클래스의 game()에서 호출됩니다.
         """
-
+        alphabet=string.ascii_uppercase
+        pick_list=[]
         print(
             f"게임은 {self.player[0].name},{self.player[1].name},{self.player[2].name},{self.player[3].name} 순으로 진행됩니다.\n")
 
         for i in range(4):
-
-            if self.player[i] == self.user_character:
+            if self.player[i].name==self.user_character:
                 print("***** 내 캐릭터 *****")
             else:
                 print(f"***** {i+1} 캐릭터 *****")
@@ -69,13 +71,24 @@ class Game:
 
             # TODO (1) : 랜덤의 알파벳 한글자를 선택하게 해주세요. 
 						# 단 앞에 나왔던 알파벳과 중복되면 안됩니다.
+            while(True):
+                pick=random.choice(alphabet)
+                if(pick not in pick_list):
+                    break
+            print(f"선택알파벳: {pick}")
+
 
             # TODO (2) : 선택된 알파벳이 맞았을 시에, 현재까지 맞춘 단어의 상태를 출력해주세요.
-            #  print("***** 맞았습니다 ᵔεᵔ  *****")
-
+            if pick in self.answer_string:
+                print("***** 맞았습니다 ᵔεᵔ  *****")
+                self.cur_string[self.answer_string.index(pick)]=pick
+                print(*self.cur_string)
+                self.player[i].correct_alp+=1
             # TODO (3) : 선택된 알파벳이 틀렸을 시에, 생명력을 데미지 만큼 감소시켜주고 이를 출력해주세요.
-            #  print("***** 틀렸습니다 (ﾟ⊿ﾟ)  ******")
-
+            else:
+                print("***** 틀렸습니다 (ﾟ⊿ﾟ)  ******")
+                self.player[i].hp-=self.player[i].damage
+                print(f"{self.player[i].name}님은 틀렸기 때문에 HP가 {self.player[i].hp}가 남았습니다.")
     def game_result(self):
         """
         - [ 게임 종료 후 ] 부분을 담당하는 함수 입니다.
@@ -90,13 +103,22 @@ class Game:
         print("=============================")
         print("     게임 순위 - 생명력")
         print("=============================")
+        self.player.sort(key = lambda x:x.hp,reverse=True)
+        for i in range(4):
+            if self.player[i].hp>0:
+                print(f"{i+1}등: {self.player[i].name} (HP : {self.player[i].hp})")
+            else:
+                print(f"{i+1}등: {self.player[i].name} (사망)")
 
         # TODO (2) : 알파벳 맞춘 횟수 순으로 결과값을 출력해주세요.
         # sort 와 lambda 함수에 대해 공부해보세요. 사용하지 않아도 좋습니다.
         print("=============================")
         print(" 게임 순위 - 알파벳 맞춘 횟수")
         print("=============================")
-
+        self.player.sort(key = lambda x:x.correct_alp,reverse=True)
+        for i in range(4):
+            print(f"{i+1}등: {self.player[i].name} {self.player[i].correct_alp}회")
+            
     def game(self):
         """
         - 게임 운영을 위한 함수입니다. 

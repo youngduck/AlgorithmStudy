@@ -1,5 +1,8 @@
-a=[[4,2],[3,5],[1,5]]
+import random
+import string
 
-a.sort(key=lambda x:x[0])
+data="ABCDEFG"
 
-print(a)
+print(data.index("A"))
+if "A" in data:
+    print(data)
