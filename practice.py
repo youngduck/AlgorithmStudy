@@ -1,8 +1,3 @@
-import random
-import string
-
-data="ABCDEFG"
-
-print(data.index("A"))
-if "A" in data:
-    print(data)
+d={"안녕":1,"a":2}
+d["안녕"]
+print(d)
