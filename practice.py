@@ -1,3 +1,8 @@
-d={"안녕":1,"a":2}
-d["안녕"]
-print(d)
+import sys
+
+def ab(a,b):
+    result=a+b
+    return result
+
+x,y=map(int,sys.stdin.readline().split())
+print(ab(x,y))
