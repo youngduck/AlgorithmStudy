@@ -1,8 +1,11 @@
-import sys
+import heapq
 
-def ab(a,b):
-    result=a+b
-    return result
+a=[5,7,2,1]
+b=[10,6,4]
 
-x,y=map(int,sys.stdin.readline().split())
-print(ab(x,y))
+heapq.heapify(a)
+heapq.heappush(b,a[0])
+
+while(b):
+    print(b)
+    heapq.heappop(b)
