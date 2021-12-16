@@ -1,8 +1,6 @@
 import sys
 from itertools import combinations
-
-
-
+#조합을이용하여 간단하게풀수있다.
 while(True):
     case=list(map(int,sys.stdin.readline().split()))
     k=case[0]
