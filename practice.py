@@ -1,11 +1,5 @@
-import heapq
+from itertools import combinations
 
-a=[5,7,2,1]
-b=[10,6,4]
+data=[1,2,3,4,5]
 
-heapq.heapify(a)
-heapq.heappush(b,a[0])
-
-while(b):
-    print(b)
-    heapq.heappop(b)
+print(list(combinations(data,3)))
