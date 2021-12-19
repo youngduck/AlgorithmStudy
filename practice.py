@@ -1,49 +1,20 @@
 import sys
 
-def push(data,num):
-    data.append(num)
-    return
+dice=list(map(int,sys.stdin.readline().split()))
+dice[3],dice[5]=dice[5],dice[3]
+case=[]
+min_num=dice.index(min(dice))
 
-def front(data):
-    if len(data):
-        return data[0]
-    else:
-        return -1
+for i in range(min_num-2,min_num+3):
+    if dice[i] == dice[min_num]:
+        continue
+    case.append(dice[i])
 
-def back(data):
-    if len(data):
-        return data[-1]
-    else:
-        return -1
 
-def size(data):
-    return len(data)
-    
-def empty(data):
-    if len(data):
-        return 0
-    else:
-        return 1
-    
-def pop(data):
-    if len(data):
-        return data.pop(0)
-    else:
-        return -1
+second_num=min(case)+min_num
+third_num=0
 
-data=[]
+third= case[case.index(min(case))+1] if case[case.index(min(case))-1] >case[case.index(min(case))+1] else case[case.index(min(case))-1] 
 
-for i in range(int(sys.stdin.readline())):
-    order=sys.stdin.readline().split()
-    if order[0] == "push" :
-        push(data,int(order[1]))
-    if order[0] == "pop" :
-        print(pop(data))
-    if order[0] == "size" :
-        print(size(data))
-    if order[0] == "empty" :
-        print(empty(data))
-    if order[0] == "front" :
-        print(front(data))
-    if order[0] == "back" :
-        print(back(data))
+print(case)
+print(third)
