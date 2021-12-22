@@ -11,7 +11,6 @@ for n in range(int(sys.stdin.readline())):
     data.append(list(map(int,sys.stdin.readline().split())))
 data.sort()
 heapq.heappush(result,data[0][1])
-print(data)
 for i in range(1,len(data)):
     #result[0]을쓰는 이유 
     #가장 빨리끝나는시간과 가장 일찍 시작하는시간 매칭가능
