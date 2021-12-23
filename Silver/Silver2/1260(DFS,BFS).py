@@ -12,7 +12,6 @@ for i in range(edge):
     a,b=map(int,sys.stdin.readline().split())
     data[a].append(b)
     data[b].append(a)  
-
 #DFS
 visit=[]
 stack=deque([start])
