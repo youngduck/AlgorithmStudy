@@ -1,6 +1,5 @@
 #신발끈공식 사용
 import sys
-
 data=[list(map(float,sys.stdin.readline().split())) for i in range(int(sys.stdin.readline()))]
 data.append([data[0][0],data[0][1]])
 num1,num2=0,0
