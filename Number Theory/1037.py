@@ -4,5 +4,4 @@ result=0
 data.sort()
 
 result=data[0]*data[-1]
-    
 print(result)
