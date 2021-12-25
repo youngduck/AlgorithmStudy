@@ -1,5 +1,4 @@
 #신발끈공식 사용
-
 import sys
 
 data=[list(map(float,sys.stdin.readline().split())) for i in range(int(sys.stdin.readline()))]
