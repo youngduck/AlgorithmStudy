@@ -1,3 +1,5 @@
-n=10
+data=[['f','c','z'],['a','c','z'],['e','c','z'],['c','c','z']]
 
-print((n)*((n-1)/2))
+data.sort()
+
+print(data)
