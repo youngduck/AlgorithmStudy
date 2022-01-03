@@ -1,5 +1,3 @@
-data=[['f','c','z'],['a','c','z'],['e','c','z'],['c','c','z']]
-
-data.sort()
-
+data=[[],[]]
+data[0].append(1)
 print(data)
