@@ -23,4 +23,5 @@ for i in bag:
         result+=heapq.heappop(temp)
     elif not jew:
         break
+
 print(-result)
