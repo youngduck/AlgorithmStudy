@@ -1,4 +1,5 @@
-data=[[],[]]
-data[0].append(1)
-print(data)
-
+cnt=0
+while True:
+    cnt+=1
+    if cnt==3:
+        return cnt
