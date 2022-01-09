@@ -6,7 +6,7 @@ city=list(map(int,sys.stdin.readline().split()))
 budget=int(sys.stdin.readline())
 budgetList=[]
 
-def abc(city,mid):
+def sumMoney(city,mid):
     money=0
     for i in city:
         if i<mid:
@@ -25,7 +25,7 @@ else:
     while left<=right:
         mid=int((left+right)/2)
         #람다함수 쓰려했으나 else의 경우를 반환하지못하므로 pass
-        money=abc(city,mid)
+        money=sumMoney(city,mid)
         if money <=budget:
             budgetList.append(mid)
             left=mid+1
