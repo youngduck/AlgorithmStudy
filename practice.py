@@ -1,4 +1,24 @@
-data=[3,4,5,6,7]
+import sys
+from itertools import combinations
 
-print(list(filter(lambda x:x>5,data)))
-print(data)
+n=int(sys.stdin.readline())
+k=int(sys.stdin.readline())
+
+data=list(map(int,sys.stdin.readline().split()))
+road=max(data)
+data=set(data)
+num=list(range(road+1))
+
+a=list(combinations(num,k))
+
+result=[]
+for i,j in a:
+    sum=0
+    for x in data:
+        dis=min(abs(x-i),abs(x-j))
+        sum+=dis
+    result.append(sum)
+
+print(min(result))
+
+
