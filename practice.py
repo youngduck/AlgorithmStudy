@@ -1,6 +1,5 @@
-for i in range(5):
-    if(i ==3):
-        break
-    print(i)
-else:
-    print("hi")
+a=[]
+
+a.append([1,2])
+
+print(a)
