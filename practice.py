@@ -1,6 +1,4 @@
-data=[1,2,3]
-bata=[4,5,6]
-
-s=list(zip(data,bata))
+s=float('inf')
+s=min(s,10)
 
 print(s)
