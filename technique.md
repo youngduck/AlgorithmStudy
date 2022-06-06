@@ -5,11 +5,25 @@ heapq.heappop()
 heapq.heapify()
 heapq.heappush()
 ```
+## 시간 줄이기
+.append() 하는것보다 리스트 여러개를 생성후 직접 값을 할당해주는것이 좋음.
 
 ## 출력 잡기술
 ```py
 data=[1,2,3]
 print(*data) #1 2 3
+```
+
+## from collections
+개수 카운터
+```py
+from collections import Counter
+
+count = Counter(['red','blue','red','yellow','pink','blue'])
+
+print(count['red'])
+print(dict(count))
+
 ```
 
 ## from itertools
@@ -51,3 +65,5 @@ p=float('inf')  #양의무한대
 
 m=float('inf') #음의무한대
 ```
+
+## reverse,reversed
