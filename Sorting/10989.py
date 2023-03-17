@@ -1,10 +1,13 @@
 import sys
-N=int(sys.stdin.readline())
-num_range=[0]*10001
-for i in range(N):
-    a=int(sys.stdin.readline())
-    num_range[a]+=1
-for j in range(len(num_range)):
-    if num_range[j] != 0:
-        for k in range(num_range[j]):
-            print(j)
+
+n=int(sys.stdin.readline())
+arr=[0]*10001
+
+for i in range(n):
+    num=int(sys.stdin.readline())
+    arr[num]+=1
+
+for i in range(10001):
+    if arr[i]!=0:
+        for j in range(arr[i]):
+            print(i)
