@@ -1,3 +1,3 @@
-word = 'ansdlvm zmsdf'
+a=['word','10','20']
 
-print(sorted(word))
+print(int(a[0]))
