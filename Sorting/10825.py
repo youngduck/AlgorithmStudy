@@ -10,8 +10,6 @@ def stoI(word):
 
 data=[list(map(stoI,sys.stdin.readline().split())) for i in range(n)]
 
-
-
 sorted_data = sorted(data,key=lambda x:(-x[1],x[2],-x[3],x[0]))
 
 for i in range(n):
