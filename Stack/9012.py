@@ -1,21 +1,18 @@
 import sys
+from collections import deque
 
-t=int(sys.stdin.readline())
-
-for i in range(t):
-    word=sys.stdin.readline()
-    cnt=0
-    for j in word:
-        if j == '(':
+for i in range(int(sys.stdin.readline())):
+    word=deque(sys.stdin.readline().rstrip())
+    cnt = 0
+    result='NO'
+    while(word):
+        wordPop=word.pop()
+        if wordPop==')':
             cnt+=1
-        elif j == ')':
+        else:
             cnt-=1
-        if cnt <0:
-            cnt=-1
-            break
-            
-    if cnt == 0:
-       print("YES")
-    else:
-       print("NO")
-
+            if(cnt<0):
+                break
+    if(cnt==0):
+        result='YES'
+    print(result)

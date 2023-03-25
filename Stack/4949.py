@@ -1,26 +1,40 @@
-while True :
-    a = input()
-    stack = []
+import sys
+from collections import deque
 
-    if a == "." :
+bracket = ['[',']','(',')']
+
+def isBracket(x):
+    if x in bracket:
+        return True
+
+while True:
+    word = sys.stdin.readline().rstrip()
+    
+    stack=deque([])
+    
+    if word == '.':
         break
+    
+    result = True
 
-    for i in a :
-        if i == '[' or i == '(' :
-            stack.append(i)
-        elif i == ']' :
-            if len(stack) != 0 and stack[-1] == '[' :
-                stack.pop() # 맞으면 지워서 stack을 비워줌 0 = yes
-            else : 
-                stack.append(']')
-                break
-        elif i == ')' :
-            if len(stack) != 0 and stack[-1] == '(' :
+    filterdData=deque(filter(isBracket,word))
+    while (filterdData):
+        filteredWord = filterdData.popleft()
+        if filteredWord == '[' or filteredWord =='(':
+            stack.append(filteredWord)
+        elif filteredWord == ']':
+            if len(stack) !=0 and stack[-1]=='[':
                 stack.pop()
-            else :
+            else:
+                stack.append(']')
+        else:
+            if len(stack) !=0 and stack[-1]=='(':
+                stack.pop()
+            else:
                 stack.append(')')
                 break
-    if len(stack) == 0 :
+
+    if ((len(stack)==0)):
         print('yes')
-    else :
+    else:
         print('no')
