@@ -1,23 +1,21 @@
-short=[]
+import sys
+
+data=[int(sys.stdin.readline()) for i in range(9)]
+find = False
 
 for i in range(9):
-    num=int(input())
-    short.append(num)
-    
-short.sort()
-full=sum(short)
-find=full-100
-
-for i in short:
-    for j in short:
-        if i ==j:
-            continue
-        elif i+j == find:
-            short.pop(short.index(i))
-            short.pop(short.index(j))
-    if len(short) == 7:
+    for j in range(i+1,9):
+        sum_height=sum(data)-data[i]-data[j]
+        n1=data[i]
+        n2=data[j]
+        if sum_height==100:
+            data.remove(n1)
+            data.remove(n2)
+            find = True
+            break
+    if find:
         break
-        
-                
-for i in short:
+
+data.sort()
+for i in data:
     print(i)
